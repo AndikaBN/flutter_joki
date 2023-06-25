@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart';
 
 class topupScren extends StatelessWidget {
   @override
@@ -136,7 +136,7 @@ class topupScren extends StatelessWidget {
                           height: 1.4,
                           fontWeight: FontWeight.normal,
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 19,
                         ),
                       ),
                     ), //////////
@@ -147,13 +147,13 @@ class topupScren extends StatelessWidget {
                         children: [
                           Text('Tutorial:',
                               style: GoogleFonts.raleway(
-                                fontSize: 20,
+                                fontSize: 19,
                                 color: Colors.white,
                               )),
                           Text(
                             '1. Masukan ID',
-                            style: TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.raleway(
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
@@ -162,8 +162,8 @@ class topupScren extends StatelessWidget {
                           ),
                           Text(
                             '2. Pilih nominal UC',
-                            style: TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.raleway(
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
@@ -172,8 +172,8 @@ class topupScren extends StatelessWidget {
                           ),
                           Text(
                             '3. Pilih metode pembayaran',
-                            style: TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.raleway(
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
@@ -182,8 +182,8 @@ class topupScren extends StatelessWidget {
                           ),
                           Text(
                             '4. Masukan nomor Whatsapp dengan benar!',
-                            style: TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.raleway(
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
@@ -192,8 +192,8 @@ class topupScren extends StatelessWidget {
                           ),
                           Text(
                             '5. Klik beli sekarang dan lakukan pembayaran',
-                            style: TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.raleway(
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
@@ -202,8 +202,8 @@ class topupScren extends StatelessWidget {
                           ),
                           Text(
                             '6. UC akan masuk otomatis ke akun Anda',
-                            style: TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.raleway(
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
@@ -226,11 +226,208 @@ class topupScren extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      child: Text(
-                        'Pilih Item',
-                        style: GoogleFonts.inter(),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              '1.  Informasi Pesanan',
+                              style: GoogleFonts.inter(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          )
+                        ],
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Container(
+                        width: double.infinity,
+                        height: 2,
+                        decoration: BoxDecoration(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Container(
+                        width: double.infinity,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                        ),
+                        child: Container(
+                          height: 44.0,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(
+                                12,
+                              ),
+                            ),
+                          ),
+                          child: Center(
+                            child: TextField(
+                              style: GoogleFonts.raleway(
+                                color: Colors.grey[800],
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Masukan User ID",
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Text(
+                        "Untuk menemukan ID Karakter Anda, masukan ke akun Anda di aplikasi. Klik avatar yang terletak di pojok kiri atas layar utama. Anda dapat menemukan ID Karakter Anda tepat  di bawah profil Anda",
+                        style: GoogleFonts.raleway(
+                            fontSize: 19, color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                width: double.infinity,
+                height: 350,
+                decoration: BoxDecoration(
+                  color: const Color(0xff1B4BF5),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              '2.  Pilihan Item',
+                              style: GoogleFonts.inter(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Container(
+                        width: double.infinity,
+                        height: 2,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: GridView.count(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 12,
+                        childAspectRatio: 134 / 54,
+                        shrinkWrap: true,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12.0),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 3, top: 20),
+                                      child: Text(
+                                        '25 UC',
+                                        style: GoogleFonts.inter(
+                                          fontSize: 19,
+                                          fontWeight: FontWeight.w900,
+                                          color: const Color(0xff1B4BF5),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 15, top: 5),
+                                      child: Text(
+                                        'Rp.4.700',
+                                        style: GoogleFonts.inter(
+                                          fontSize: 19,
+                                          color: const Color(0xff1B4BF5),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Image.asset(
+                                  "assets/uc.png",
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12.0),
+                              ),
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12.0),
+                              ),
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12.0),
+                              ),
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
