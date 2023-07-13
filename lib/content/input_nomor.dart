@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'succes_page.dart';
+
 class NomorWa extends StatelessWidget {
   const NomorWa({super.key});
 
@@ -104,7 +106,12 @@ class NomorWa extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SuccesPage()),
+                );
+              },
               child: Text(
                 "Konfirmasi",
                 style: GoogleFonts.raleway(

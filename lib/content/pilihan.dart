@@ -13,7 +13,6 @@ class Pilihan extends StatefulWidget {
 }
 
 class _PilihanState extends State<Pilihan> {
-
   final ProductService _productService = ProductService();
   late Future<List<Produk>> _produks;
 
@@ -26,6 +25,8 @@ class _PilihanState extends State<Pilihan> {
   Future<void> _fetchProducts() async {
     _produks = _productService.fetchProduct();
   }
+
+  int selek = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -83,14 +84,21 @@ class _PilihanState extends State<Pilihan> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     children: products.map((product) {
+                      List<Produk> prodak = snapshot.data!;
                       return InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            selek = prodak.indexOf(product);
+                          });
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(12.0),
                             ),
-                            color: Colors.white,
+                            color: selek == prodak.indexOf(product)
+                                ? Colors.greenAccent
+                                : Colors.white,
                           ),
                           child: Row(
                             children: [
@@ -104,7 +112,9 @@ class _PilihanState extends State<Pilihan> {
                                       style: GoogleFonts.inter(
                                         fontSize: 19,
                                         fontWeight: FontWeight.w900,
-                                        color: const Color(0xff1B4BF5),
+                                        color: selek == prodak.indexOf(product)
+                                            ? Colors.white
+                                            : const Color(0xff1B4BF5),
                                       ),
                                     ),
                                   ),
@@ -115,7 +125,9 @@ class _PilihanState extends State<Pilihan> {
                                       formatCurrency(product.harga),
                                       style: GoogleFonts.inter(
                                         fontSize: 19,
-                                        color: const Color(0xff1B4BF5),
+                                        color: selek == prodak.indexOf(product)
+                                            ? Colors.white
+                                            : const Color(0xff1B4BF5),
                                       ),
                                     ),
                                   )

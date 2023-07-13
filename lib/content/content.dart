@@ -9,13 +9,14 @@ import 'description.dart';
 import 'info.dart';
 
 class TopupScreen extends StatefulWidget {
-  const TopupScreen({super.key});
+  const TopupScreen({super.key, Key });
 
   @override
   State<TopupScreen> createState() => _TopupScreenState();
 }
 
 class _TopupScreenState extends State<TopupScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,32 +45,32 @@ class _TopupScreenState extends State<TopupScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
               child: Column(
-                children: [
-                  const Header(),
-                  const SizedBox(
+                children: const [
+                  Header(),
+                  SizedBox(
                     height: 15.0,
                   ),
-                  const Sinopsis(),
-                  const SizedBox(
+                  Sinopsis(),
+                  SizedBox(
                     height: 20.0,
                   ),
-                  const Informasi(),
-                  const SizedBox(
+                  Informasi(),
+                  SizedBox(
                     height: 20.0,
                   ),
                   Pilihan(),
-                  const SizedBox(
+                  SizedBox(
                     height: 20.0,
                   ),
                   const Pembayaran(),
-                  const SizedBox(
+                  SizedBox(
                     height: 20.0,
                   ),
-                  const NomorWa(),
-                  const SizedBox(
+                  NomorWa(),
+                  SizedBox(
                     height: 20.0,
                   ),
-                  const Description(),
+                  Description(),
                 ],
               ),
             ),
