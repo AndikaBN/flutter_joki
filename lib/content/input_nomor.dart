@@ -3,8 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'succes_page.dart';
 
-class NomorWa extends StatelessWidget {
-  const NomorWa({super.key});
+class NomorWa extends StatefulWidget {
+  const NomorWa({Key? key}) : super(key: key);
+
+  @override
+  _NomorWaState createState() => _NomorWaState();
+}
+
+class _NomorWaState extends State<NomorWa> {
+  bool _isLoading = false;
+
+  TextEditingController _textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +79,7 @@ class NomorWa extends StatelessWidget {
                 ),
                 child: Center(
                   child: TextField(
+                    controller: _textEditingController,
                     style: GoogleFonts.inter(
                       color: Colors.grey[800],
                       fontSize: 18,
@@ -91,12 +101,17 @@ class NomorWa extends StatelessWidget {
             height: 20.0,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Text(
-              "Bukti pembelianmu akan kami kirimkan ke Whatsapp. Pastikan nomor handphone yang di input aktif",
-              style: GoogleFonts.raleway(fontSize: 19, color: Colors.white),
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(
+                children: [
+                  Text(
+                    "Bukti pembelianmu akan kami kirimkan ke Whatsapp. Pastikan nomor handphone yang di input aktif",
+                    style:
+                        GoogleFonts.raleway(fontSize: 19, color: Colors.white),
+                  ),
+            
+                ],
+              )),
           const SizedBox(
             height: 20.0,
           ),
@@ -106,12 +121,7 @@ class NomorWa extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SuccesPage()),
-                );
-              },
+              onPressed: _isLoading ? null : _showConfirmationDialog,
               child: Text(
                 "Konfirmasi",
                 style: GoogleFonts.raleway(
@@ -121,8 +131,64 @@ class NomorWa extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 20.0,
+          ),
         ],
       ),
+    );
+  }
+
+  Future<void> _showConfirmationDialog() async {
+  String username = _textEditingController.text;
+
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Detail TopUp'),
+        content: Text('Mohon konfirmasi Username anda sudah benar: $username.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text(
+              'Batal',
+              style: TextStyle(color: Colors.blueGrey),
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xff1B4BF5)),
+            onPressed: () {
+              Navigator.of(context).pop();
+              _performTopup();
+            },
+            child: const Text('Konfirmasi'),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+
+  Future<void> _performTopup() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    // Simulasi penundaan tindakan topup
+    await Future.delayed(const Duration(seconds: 2));
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SuccesPage()),
     );
   }
 }
