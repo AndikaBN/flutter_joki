@@ -39,29 +39,27 @@ class _PilihanState extends State<Pilihan> {
       ),
       child: Column(
         children: [
-          Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text(
-                    '2.  Pilihan Item',
-                    style: GoogleFonts.inter(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                )
-              ],
-            ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  '2.  Pilihan Item',
+                  style: GoogleFonts.inter(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              )
+            ],
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Container(
               width: double.infinity,
               height: 2,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
               ),
             ),
@@ -82,7 +80,7 @@ class _PilihanState extends State<Pilihan> {
                     crossAxisSpacing: 12,
                     childAspectRatio: 134 / 54,
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: products.map((product) {
                       List<Produk> prodak = snapshot.data!;
                       return InkWell(
@@ -93,7 +91,7 @@ class _PilihanState extends State<Pilihan> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(12.0),
                             ),
                             color: selek == prodak.indexOf(product)
@@ -153,7 +151,7 @@ class _PilihanState extends State<Pilihan> {
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else {
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 }
               },
             ),

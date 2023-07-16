@@ -8,7 +8,6 @@ class SuccesPage extends StatefulWidget {
   State<SuccesPage> createState() => _SuccesPageState();
 }
 
-
 class _SuccesPageState extends State<SuccesPage> {
   @override
   Widget build(BuildContext context) {
@@ -21,13 +20,11 @@ class _SuccesPageState extends State<SuccesPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                child: Image.asset(
-                  "Ceklist.png",
-                  width: 130.0,
-                  height: 130.0,
-                  fit: BoxFit.cover,
-                ),
+              Image.asset(
+                "Ceklist.png",
+                width: 130.0,
+                height: 130.0,
+                fit: BoxFit.cover,
               ),
               const SizedBox(
                 height: 30.0,

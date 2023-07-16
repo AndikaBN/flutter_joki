@@ -16,17 +16,17 @@ class Sinopsis extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Row(
                             children: [
                               Container(
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(12.0),
                                   ),
                                 ),
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.all(
+                                  borderRadius: const BorderRadius.all(
                                     Radius.circular(12.0),
                                   ),
                                   child: Image.asset(
@@ -36,7 +36,7 @@ class Sinopsis extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 20.0),
+                              const SizedBox(width: 20.0),
                               Text('PUBG MOBILE',
                                   style: GoogleFonts.raleway(
                                     fontSize: 24.0,
@@ -59,7 +59,7 @@ class Sinopsis extends StatelessWidget {
                             const SizedBox(
                               width: 10.0,
                             ),
-                            Text(
+                            const Text(
                               'UC PUBGM KHUSUS UNTUK \n REGIONAL INDONESIA',
                               style: TextStyle(
                                 fontStyle: FontStyle.italic,
@@ -71,10 +71,10 @@ class Sinopsis extends StatelessWidget {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: InkWell(
                             onTap: () {},
-                            child: Text(
+                            child: const Text(
                               'UC PUBGM REGIONAL GLOBAL KLIK DISINI',
                               style: TextStyle(
                                   fontWeight: FontWeight.normal,
@@ -85,7 +85,7 @@ class Sinopsis extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
                           child: Text(
                             'PUBG Mobile adalah sebuah permainan video battle royale gratis dimainkan yang dikembangkan oleh LightSpeed & Quantum Studio, sebuah divisi dari Tencent Games. Ini merupakan adaptasi permainan piranti genggam dari PlayerUnknown\'s Battlegrounds yang dirilis untuk Android dan IOS pada 19 Maret 2018.',
                             style: GoogleFonts.raleway(
@@ -97,7 +97,7 @@ class Sinopsis extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [

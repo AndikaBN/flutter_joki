@@ -8,8 +8,8 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: const Color(0xff1B4BF5),
+      decoration: const BoxDecoration(
+        color: Color(0xff1B4BF5),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -48,7 +48,7 @@ class Footer extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 2,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(235, 202, 202, 202),
               ),
             ),
@@ -56,7 +56,7 @@ class Footer extends StatelessWidget {
           const SizedBox(
             height: 15.0,
           ),
-          Text(
+          const Text(
             "All Reserved By Teknologi Infromasi  © Copyright 2023",
             style: TextStyle(
               fontSize: 18.0,
