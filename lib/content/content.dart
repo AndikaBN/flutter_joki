@@ -1,12 +1,12 @@
 import 'package:flutter_convert/content/footer.dart';
 import 'package:flutter_convert/content/header.dart';
-
 import 'package:flutter_convert/content/pilihan.dart';
 import 'package:flutter_convert/content/sinopsis.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_convert/content/succes_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'description.dart';
+import 'notification_page.dart';
 
 class TopupScreen extends StatefulWidget {
   // ignore: avoid_types_as_parameter_names, non_constant_identifier_names
@@ -91,6 +91,20 @@ class _TopupScreenState extends State<TopupScreen> {
     );
   }
 
+  void _navigateToNotificationPage() {
+    // Call this method to navigate to the NotificationPage and pass the input data
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NotificationPage(
+          id: _id.text,
+          promo: _promo.text,
+          nomorwa: _textEditingController.text,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,9 +119,11 @@ class _TopupScreenState extends State<TopupScreen> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _navigateToNotificationPage();
+            },
             icon: const Icon(
-              Icons.menu,
+              Icons.notifications,
               size: 24.0,
             ),
           ),
@@ -372,12 +388,13 @@ class _TopupScreenState extends State<TopupScreen> {
                                         Text(
                                           'Rp 2.751',
                                           style: GoogleFonts.inter(
-                                              fontWeight: FontWeight.bold,
-                                              color: selectContainer == 0
-                                                  ? Colors.white
-                                                  : const Color.fromARGB(
-                                                      255, 121, 107, 107),
-                                              fontSize: 20),
+                                            fontWeight: FontWeight.bold,
+                                            color: selectContainer == 0
+                                                ? Colors.white
+                                                : const Color.fromARGB(
+                                                    255, 121, 107, 107),
+                                            fontSize: 20,
+                                          ),
                                         ),
                                       ],
                                     ),

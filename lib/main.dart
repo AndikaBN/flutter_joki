@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'content/content.dart';
+import 'sign_in_page.dart';
+import 'sign_up_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: TopupScreen (),
+      routes: {
+        '/': (context) => const SignInPage (),
+        '/sign-in':(context) => const SignInPage (),
+        '/sign-up':(context) => const SignUpPage (),
+        '/menu':(context) => const TopupScreen (),
+      },
     );
   }
 }
